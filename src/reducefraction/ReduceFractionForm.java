@@ -149,6 +149,10 @@ public class ReduceFractionForm extends javax.swing.JFrame {
             int numerator = Integer.parseInt(numField.getText());
             int denominator = Integer.parseInt(denomField.getText());
             
+            if(denominator == 0){
+                throw new ArithemeticException();
+            }
+            
             //find GCD of the numbers
             int divide = gcd(numerator, denominator);
             
@@ -163,6 +167,8 @@ public class ReduceFractionForm extends javax.swing.JFrame {
             //notify users to input valid integers
             outField.setForeground(Color.red);
             outField.setText("Please enter integers.");
+        }catch(ArithmeticException ae){
+            outField.setText("Cannot divide by 0.")
         }
     }//GEN-LAST:event_inputButtonActionPerformed
 
