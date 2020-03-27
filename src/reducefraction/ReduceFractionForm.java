@@ -173,7 +173,7 @@ public class ReduceFractionForm extends javax.swing.JFrame {
             outField.setForeground(Color.red);
             outField.setText("Please enter integers.");
         }catch(ArithmeticException ae){
-            outField.setText("Cannot divide by 0.")
+            outField.setText("Cannot divide by 0.");
         }
     }//GEN-LAST:event_inputButtonActionPerformed
 
