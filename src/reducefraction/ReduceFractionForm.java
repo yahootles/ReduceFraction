@@ -150,7 +150,7 @@ public class ReduceFractionForm extends javax.swing.JFrame {
             int denominator = Integer.parseInt(denomField.getText());
             
             if(denominator == 0){
-                throw new ArithemeticException();
+                throw new ArithmeticException();
             }
             
             //find GCD of the numbers
@@ -159,6 +159,11 @@ public class ReduceFractionForm extends javax.swing.JFrame {
             //reduced numerator and denominator
             int newNumerator = numerator/divide;
             int newDenominator = denominator/divide;
+            
+            if(newNumerator > 0 && newDenominator < 0){
+                newNumerator *=-1;
+                newDenominator *= -1;
+            }
             
             //output old and new fractions
             outField.setForeground(Color.black);
